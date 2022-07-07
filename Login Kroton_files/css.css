@@ -1,0 +1,69 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Sofia", sans-serif;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    background-color: rgb(241, 241, 241);
+    z-index: 99;
+}
+
+nav li {
+    color: rgb(0, 24, 102);
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+}
+
+.wrap {
+    /*Ajuste a largura e altura desejadas aqui*/
+    width: 100%;
+    height: 100%;
+
+    /*isto fará o elemento video e o .container se adaptarem ao .wrap*/
+    /*position: relative; */
+}
+
+.wrap > .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /*apenas um -1 é necessário quando se trabalha com relative + absolute, sendo pai e filho*/
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* evita do video passar a altura desejada do .wrap */
+}
+.wrap > .bg-video > video {
+    width: 100%;
+}
+
+.logonav {
+    max-width: 60%;
+}
+
+.ul1 {
+    text-align: center;
+
+}
+
+.blocknav {
+    position: fixed;
+    margin-top: 0em;
+    right: 0;
+    top: 0%;
+}
+
+.img {
+    max-width: 100%;
+}
+
+.iconcracha {
+    max-width: 5%;
+    print-color-adjust: white;
+    margin-right: 5%;
+
+}
