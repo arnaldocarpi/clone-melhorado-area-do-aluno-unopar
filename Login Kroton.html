@@ -11,6 +11,7 @@
     <link rel="stylesheet" media="screen" href="./Login Kroton_files/bootstrap.min.css">
     <link rel="stylesheet" media="screen" href="./Login Kroton_files/style.min.css">
     <link rel="stylesheet" media="screen" href="./Login Kroton_files/marca.min.css">
+    <link rel="stylesheet" href="/Login Kroton_files/css.css">
     <style>
         body.login-img-pa {
             background-image: url('https://login.kroton.com.br/Content/img/unopar/login-pa.jpg');
@@ -89,42 +90,47 @@
                     <div class="logo text-center">
                         <img src="./Login Kroton_files/logopa.png" style="width: 90%">
                     </div>
-                    <div class="col-xs-12">
-                        <h4 style="margin-top: 25px;">Bem-vindo aluno!</h4>
-                        <input type="hidden" id="hidError" name="hidError">
-                        <div class="alert alert-danger js-alert" style="display:none"></div>
+                        <form class="form" id="form">
+                            <div class="col-xs-12">
+                                <h4 style="margin-top: 25px;">Bem-vindo aluno!</h4>
 
-                        <div class="alert alert-warning" style="display: none" id="trb">
-                            <i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;
-                            Está tendo problemas com seu login? <a class="alert-link"
-                                href="https://login.kroton.com.br/AccountAluno/AccountTrouble">Clique aqui</a>
-                        </div>
+                                <input type="hidden" id="hidError" name="hidError">
+                                <div class="alert alert-danger js-alert" style="display:none"></div>
 
-                        <div class="form-group marca-sec-texto" data-icon="p">
-                            <input type="text" id="username" name="username" class="form-control"
-                                placeholder="CPF ou RA" value="" maxlength="150" autocomplete="username">
-                        </div>
-                        <div class="form-group marca-sec-texto" data-icon="l">
-                            <input type="password" id="password" name="password" class="form-control"
-                                placeholder="Senha" value="" maxlength="16" autocomplete="current-password">
-                        </div>
-                        <div class="form-group">
-                            <span style="margin-top:10px">
-                                <label for="checkbox">
-                                    <input type="checkbox" id="checkbox" name="lembrarMe">
-                                    &nbsp;Salvar dados
-                                </label>
-                            </span>
-                        </div>
-                        <p class="clearfix">
-                            <a href="https://login.kroton.com.br/AccountAluno/AccountRegister"
-                                class="marca-link js-acesso">Esqueci minha senha</a>
-                            &nbsp;/ <a href="https://login.kroton.com.br/AccountAluno/AccountRegister"
-                                class="marca-link js-acesso">Primeiro acesso</a>
-                        </p>
-                        <div class="form-group padT">
-                            <a href="./Selecionar.html"><button class="btn marca-btn">ENTRAR</button></a>
-                        </div>
+                                <div class="alert alert-warning" style="display: none" id="trb">
+                                    <i class="glyphicon glyphicon-exclamation-sign"></i>&nbsp;
+                                    Está tendo problemas com seu login? <a class="alert-link"
+                                        href="https://login.kroton.com.br/AccountAluno/AccountTrouble">Clique aqui</a>
+                                </div>
+
+                                <div class="form-group marca-sec-texto" data-icon="p">
+                                    <input type="text" id="username" name="username" class="form-control"
+                                        placeholder="CPF ou RA" maxlength="150" autocomplete="username">
+                                    <i><small id="MensagemError" class="">CPF invalido.</small></i>
+                                </div>
+
+                                <div class="form-group marca-sec-texto" data-icon="l">
+                                    <input type="password" id="password" name="password" class="form-control"
+                                        placeholder="Senha" value="" maxlength="16" autocomplete="current-password">
+                                </div>
+
+                                <div class="form-group">
+                                    <span style="margin-top:10px">
+                                        <label for="checkbox">
+                                            <input type="checkbox" id="checkbox" name="lembrarMe">
+                                            &nbsp;Salvar dados
+                                        </label>
+                                    </span>
+                                </div>
+                                <p class="clearfix">
+                                    <a href="https://login.kroton.com.br/AccountAluno/AccountRegister"
+                                        class="marca-link js-acesso">Esqueci minha senha</a>
+                                    &nbsp;/ <a href="https://login.kroton.com.br/AccountAluno/AccountRegister"
+                                        class="marca-link js-acesso">Primeiro acesso</a>
+                                </p>
+                                <div class="form-group padT">
+                                    <button class="btn marca-btn" type="submit">ENTRAR</button>
+                                </div>
                         </form>
                     </div>
                 </div>
@@ -147,7 +153,11 @@
         <p class="privacy-bar-text col-sm-11 col-xs-12">Esse site utiliza cookies para oferecer uma melhor experiência de navegação, analisar como você interage em nosso site, otimizar o desempenho e personalizar o conteúdo. Ao utilizar este site, você concorda com o uso de cookies. Saiba mais em&nbsp;nosso <a href="https://www.canaldatransparencia.com.br/cogna" target="_blank" id="portal-link">Portal de Privacidade</a>.</p>
         <div class="privacy-bar-button-box col-sm-1 col-xs-12">
             <button type="submit" onclick="HidePrivacyBar();" id="privacyBarButton" class="btn privacy-bar-button">Ok</button>
+            <span class="error" id="error"><p>Insira um CPF valido</p></span>
         </div>
     </div>
+
+    <script src="index.js"></script>
+
 </body>
 </html>
