@@ -43,7 +43,7 @@
             })      
             
             if(value === cpfValit.CPF && value !== "") {
-                window.location.href = "./Selecionar.html"
+                window.location.href = "./select.html"
             } else {
                 const error = document.getElementById('MensagemError')
                 error.className ='erroCPF'
