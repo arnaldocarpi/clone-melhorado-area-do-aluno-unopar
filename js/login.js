@@ -31,7 +31,7 @@
                 genre: "",
                 CPF: ""
             }
-            
+
             persons.forEach((item) =>{
                 if(value === item.CPF) {
                     cpfValit = {
@@ -40,13 +40,25 @@
                         CPF: item.CPF
                     }
                 }
-            })      
+        })
+        
+        if(value === cpfValit.CPF && value !== "") {
+            const error = document.getElementById('MensagemError')
+            window.location.href = "./select.html"
+            error.textContent = " "
+        } 
+        
+        if (value !== cpfValit.CPF) {
+            const error = document.getElementById('MensagemError')
+            error.textContent = "CPF invalido"
+            error.className ='erroCPF'
+        }   
+        
+        if (value === "") {
+            const error = document.getElementById('MensagemError')
+            error.textContent = "Insira seu CPF"
+            error.className ='erroCPF'
+        }   
             
-            if(value === cpfValit.CPF && value !== "") {
-                window.location.href = "./select.html"
-            } else {
-                const error = document.getElementById('MensagemError')
-                error.className ='erroCPF'
-            }
-    
+            localStorage.setItem('Person', JSON.stringify(cpfValit))
         })
