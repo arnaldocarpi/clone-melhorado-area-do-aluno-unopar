@@ -1,0 +1,92 @@
+.form i {
+    visibility: hidden;
+}
+
+.erroCPF {
+    visibility: visible;
+}
+
+.smbackground {
+    background-color: rgb(241, 241, 241);
+}
+
+.carteirinha {
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+nav {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    background-color: rgb(241, 241, 241);
+    z-index: 99;
+}
+
+nav li {
+    color: rgb(0, 24, 102);
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+}
+
+
+}
+.wrap > .bg-video > video {
+    width: 100%;
+}
+
+.logonav {
+    max-width: 60%;
+}
+
+.ul1 {
+    text-align: center;
+
+}
+
+.blocknav {
+    position: fixed;
+    margin-top: 0em;
+    right: 0;
+    top: 0%;
+}
+
+.img {
+    max-width: 100%;
+}
+
+.iconcracha {
+    max-width: 5%;
+    print-color-adjust: white;
+    margin-right: 5%;
+
+}
+
+.form i {
+    visibility: hidden;
+}
+
+.erroCPF {
+    visibility: visible;
+}
+
+*/
