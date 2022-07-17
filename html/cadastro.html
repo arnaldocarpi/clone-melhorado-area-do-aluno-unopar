@@ -17,6 +17,7 @@
             background-image: url('https://login.kroton.com.br/Content/img/unopar/login-pa.jpg');
         }
     </style>
+
 </head>
 
 <body class="login-img-pa">
@@ -26,48 +27,59 @@
                 <div class="logo text-center">
                     <img src="../logo/logopa.png">
                 </div>
-                <form class="form" id="form">
-                    <div class="col-xs-12">
+                
+                <form action="" class="form col-xs-12" id="form">
+                    
                         <h4 style="margin-top: 25px;">Bem-vindo. Cadastre-se aqui!</h4>
-                        <div class="form-group marca-sec-texto">
-                            <input type="text" id="#" name="#" class="form-control" placeholder="Nome Completo"
+
+                        <div class="form-group marca-sec-texto" id="nameDIV">
+                            <input type="text" id="name" name="#" class="form-control" placeholder="Nome Completo"
                                 maxlength="150" autocomplete="#">
+                                <small id="erroName">Erro</small>
                         </div>
                         <br>
-                        <div class="form-group marca-sec-texto">
-                            <input type="text" id="#" name="#" class="form-control" placeholder="Data de nascimento"
+                        <div class="form-group marca-sec-texto" id="birthDateDIV">
+                            <input type="text" id="birthDate" name="#" class="form-control" placeholder="Data de nascimento"
                                 maxlength="150" autocomplete="#">
+                                <small id="erroBirthDate">Erro</small>
                         </div>
                         <br>
-                        <div class="form-group marca-sec-texto">
-                            <input type="text" id="#" name="#" class="form-control" placeholder="E-mail" maxlength="150"
+                        <div class="form-group marca-sec-texto" id="emailDIV">
+                            <input type="text" id="email" name="#" class="form-control" placeholder="E-mail" maxlength="150"
                                 autocomplete="#">
+                                <small id="erroEmail">Erro</small>
                         </div>
                         <br>
-                        <div class="form-group marca-sec-texto">
-                            <input type="text" id="#" name="#" class="form-control" placeholder="nome de usuario"
+                        <div class="form-group marca-sec-texto" id="userDIV">
+                            <input type="text" id="user" name="#" class="form-control" placeholder="nome de usuario"
                                 maxlength="150" autocomplete="#">
+                                <small id="erroUser">Erro</small>
                         </div>
                         <br>
-                        <div class="form-group marca-sec-texto">
-                            <input type="text" id="#" name="#" class="form-control" placeholder="Senha" maxlength="150"
+                        <div class="form-group marca-sec-texto" id="passwordDIV">
+                            <input type="text" id="password" name="#" class="form-control" placeholder="Senha" maxlength="150"
                                 autocomplete="#">
+                                <small id="erroPassword">Erro</small>
                         </div>
                         <br>
-                        <div class="form-group marca-sec-texto">
-                            <input type="text" id="#" name="#" class="form-control" placeholder="Repita sua senha"
+                        <div class="form-group marca-sec-texto" id="confirmPasswordDIV">
+                            <input type="text" id="confirmPassword" name="#" class="form-control" placeholder="Repita sua senha"
                                 maxlength="150" autocomplete="#">
+                                <small id="erroConfirmPassword">Erro</small>
                         </div>
+
+                        <button class="btn btn-primary medio" type="submit" for="form">Cadastrar</button>
+
                         <div class="logo text-center">
-                            <a href="#"><button class="btn btn-primary medio" type="submit">
-                                    <h4>Cadastrar</h4>
-                                </button></a>
                             <div class="form-group">
                                 <span style="margin-top:10px">
                                     <label for="checkbox">
                                         <input type="checkbox" id="checkbox" name="lembrarMe">
                                         &nbsp;Eu li e concordo com os <a href="#">Termos de uso</a>
                                     </label>
+                                    <div id="checkDIV" class="form-group">
+                                        <small id="erroCheck">Erro</small>
+                                    </div>
                                 </span>
                             </div>
                             <div class="form-group">
@@ -77,7 +89,7 @@
                                     </label>
                                 </span>
                             </div>
-                        </div>
+                       </div>
                 </form>
             </div>
         </div>
@@ -94,6 +106,7 @@
             <img src="https://login.kroton.com.br/Content/graph/icon_youtube.png">
         </a>
     </div>
+    <script src="../js/cadastro.js"></script>
 </body>
 
 </html>

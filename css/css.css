@@ -1,10 +1,14 @@
-.form i {
+.form-group small {
     visibility: hidden;
 }
 
-.erroCPF {
+.form-group.error small {
     visibility: visible;
+    color: rgba(255, 0, 0, 0.651);
+    font-size: 12px;
 }
+
+
 
 .smbackground {
     background-color: rgb(241, 241, 241);
