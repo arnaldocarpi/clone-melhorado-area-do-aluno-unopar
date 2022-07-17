@@ -101,7 +101,7 @@ const form = document.getElementById('form')
 
     // User
 
-    if(userValue.length < 5 && userValue !== "") {
+    if(userValue.length < 4 && userValue !== "") {
         const userDIV = document.getElementById('userDIV')
         userDIV.classList.add("error")
         

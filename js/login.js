@@ -1,64 +1,62 @@
-
+let registration = JSON.parse (localStorage.getItem('Registration'))
 
     const form = document.getElementById('form')
         form.addEventListener('submit', (e) => {
-
         e.preventDefault()
 
-        const persons = [
-            {
-                name: "Gutemberg de Oliveira",
-                genre: "masculine",
-                username: "gutemberg.oliveira",
-            },
-            {
-                name: "Arnaldo Carpi",
-                genre: "masculine",
-                username: "arnaldo.carpi",
-            },
-            {
-                name: "Carlos Alberto",
-                genre: "masculine",
-                username: "carlos.alberto",
-            }
-        ]
-
         const username = document.getElementById('username');
-        const value = username.value;
-            
-            let cpfValit = {
-                name: "",
-                genre: "",
-                username: ""
-            }
+        const usernameValue = username.value;
 
-            persons.forEach((item) =>{
-                if(value === item.username) {
-                    cpfValit = {
-                        name: item.name,
-                        genre: item.genre,
-                        username: item.username
-                    }
-                }
-        })
+        const password = document.getElementById('password')
+        const passwordValue = password.value;
+
+        let checkoutUser = false
+        let checkoutPassword = false
         
-        if(value === cpfValit.username && value !== "") {
-            const error = document.getElementById('MensagemError')
-            window.location.href = "./html/select.html"
-            error.textContent = " "
-        } 
-        
-        if (value !== cpfValit.username) {
-            const error = document.getElementById('MensagemError')
-            error.textContent = "Usuario invalido"
-            error.className ='erroCPF'
-        }   
-        
-        if (value === "") {
-            const error = document.getElementById('MensagemError')
-            error.textContent = "Insira seu usuario"
-            error.className ='erroCPF'
-        }   
+        // Input User
+        if(usernameValue === registration.user && usernameValue !== "") {
+            const userDIV = document.getElementById('userDIV')
+            userDIV.classList.remove("error")
+
+            checkoutUser = true
+        } else if(usernameValue === "") {
+            const userDIV = document.getElementById('userDIV')
+            userDIV.classList.add("error")
             
-            localStorage.setItem('Person', JSON.stringify(cpfValit))
-        })
+            const userError = document.getElementById('userError')
+            userError.textContent = 'Preencha o campo'
+        } else {
+            const userDIV = document.getElementById('userDIV')
+            userDIV.classList.add("error")
+            
+            const userError = document.getElementById('userError')
+            userError.textContent = 'Usuario invalido'
+        }
+    
+        // Input Password
+        if(passwordValue === registration.password && passwordValue !== "") {
+            const passwordDIV = document.getElementById('passwordDIV')
+            passwordDIV.classList.remove("error")
+
+            checkoutPassword = true
+        } else if(passwordValue === "") {
+            const passwordDIV = document.getElementById('passwordDIV')
+            passwordDIV.classList.add("error")
+            
+            const passwordError = document.getElementById('passwordError')
+            passwordError.textContent = 'Preencha o campo'
+        } else {
+            const passwordDIV = document.getElementById('passwordDIV')
+            passwordDIV.classList.add("error")
+            
+            const passwordError = document.getElementById('passwordError')
+            passwordError.textContent = 'Senha invalida'
+        } 
+
+        // Authentication
+
+        if(checkoutUser && checkoutPassword) {
+            window.location.href = "../html/select.html"
+        }
+            
+})
