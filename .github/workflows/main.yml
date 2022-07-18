@@ -25,7 +25,7 @@ jobs:
         with:
           username: carpi
           server: 132.255.95.56
-          port: 22 # default is 15
+          port: 2221 # default is 15
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           
