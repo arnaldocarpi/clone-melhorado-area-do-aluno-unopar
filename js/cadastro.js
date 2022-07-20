@@ -90,7 +90,7 @@ const form = document.getElementById('form')
         checkoutBirthDate = true
     }
 
-    // Email *Verificar formato de Email / Verificar campo vazio*****
+    // Email
 
     function validatorEmail(email) {
         const regExpEmail = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/
