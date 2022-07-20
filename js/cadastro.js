@@ -41,12 +41,17 @@ const form = document.getElementById('form')
 
     // Name *Verificar formato de nome e sobrenome*****
 
-    if(nameValue.length < 4 && nameValue !== "") {
+    function validatorName(name) {
+        const regExpName = /^[A-z]+\ [A-z]+\ ?([A-z]+)?\ ?([A-z]+)?\ ?([A-z]+)?\ ?([A-z]+)?\ ?([A-z]+)?\ ?([A-z]+)?$/
+        return regExpName.test(name)
+    }
+
+    if(validatorName(nameValue) === false && nameValue !== "") {
         const nameDIV = document.getElementById('nameDIV')
         nameDIV.classList.add("error")
         
         const erroName = document.getElementById('erroName')
-        erroName.textContent = 'Insira mais de 3 letras'
+        erroName.textContent = 'Insira nome e sobrenome'
 
     } else if(nameValue === "") {
         const nameDIV = document.getElementById('nameDIV')
