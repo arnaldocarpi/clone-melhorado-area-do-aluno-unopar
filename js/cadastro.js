@@ -1,4 +1,3 @@
-
 const form = document.getElementById('form')
     form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -39,26 +38,29 @@ const form = document.getElementById('form')
     let checkoutConfirmPassword = false
     let checkoutCheckBox = false
 
-    // Name *Verificar formato de nome e sobrenome*****
+    // Name
 
     function validatorName(name) {
-        const regExpName = /^[A-z]+\ [A-z]+\ ?([A-z]+)?\ ?([A-z]+)?\ ?([A-z]+)?\ ?([A-z]+)?\ ?([A-z]+)?\ ?([A-z]+)?$/
+        const regExpName = /^[A-z]{3,}\ [A-z]{2,}\ ?([A-z]{2,})?\ ?([A-z]{2,})?\ ?([A-z]{2,})?\ ?([A-z]{2,})?\ ?([A-z]{2,})?\ ?([A-z]{2,})?$/
         return regExpName.test(name)
     }
 
-    if(validatorName(nameValue) === false && nameValue !== "") {
-        const nameDIV = document.getElementById('nameDIV')
+    if(validatorName(nameValue) === false) {
+
+        if(nameValue === "") {
+            const nameDIV = document.getElementById('nameDIV')
+            nameDIV.classList.add("error")
+    
+            const erroName= document.getElementById('erroName')
+            erroName.textContent = 'Preencha o campo'
+        } else {
+            const nameDIV = document.getElementById('nameDIV')
         nameDIV.classList.add("error")
         
         const erroName = document.getElementById('erroName')
         erroName.textContent = 'Insira nome e sobrenome'
+        }
 
-    } else if(nameValue === "") {
-        const nameDIV = document.getElementById('nameDIV')
-        nameDIV.classList.add("error")
-
-        const erroName= document.getElementById('erroName')
-        erroName.textContent = 'Preencha o campo'
     } else {
         const nameDIV = document.getElementById('nameDIV')
         nameDIV.classList.remove("error")
@@ -66,7 +68,7 @@ const form = document.getElementById('form')
         checkoutName = true
     }
 
-    // BirthDate *Verificar formato de data*****
+    // BirthDate
 
     if(birthDateValue.length < 10 && birthDateValue !== "") {
         const birthDateDIV = document.getElementById('birthDateDIV')
@@ -90,13 +92,27 @@ const form = document.getElementById('form')
 
     // Email *Verificar formato de Email / Verificar campo vazio*****
 
-    if(emailValue === "" || emailValue.length < 6 || emailValue.search("@") == -1 || emailValue.indexOf(".") < 1 || emailValue.indexOf(" ") > 0) {
-        const emailDIV = document.getElementById('emailDIV')
-        emailDIV.classList.add("error")
-        
-        const erroEmail = document.getElementById('erroEmail')
-        erroEmail.textContent = 'Email invalido'
+    function validatorEmail(email) {
+        const regExpEmail = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/
+        return regExpEmail.test(email)
+    }
 
+    if (validatorEmail(emailValue) === false) {
+        
+        if(emailValue === "") {
+            const emailDIV = document.getElementById('emailDIV')
+            emailDIV.classList.add("error")
+    
+            const erroEmail= document.getElementById('erroEmail')
+            erroEmail.textContent = 'Preencha o campo'
+        } else {
+            const emailDIV = document.getElementById('emailDIV')
+            emailDIV.classList.add("error")
+            
+            const erroEmail = document.getElementById('erroEmail')
+            erroEmail.textContent = 'Email invalido (ex: abc@abc.com)'
+        }
+        
     } else {
         const emailDIV = document.getElementById('emailDIV')
         emailDIV.classList.remove("error")
@@ -200,4 +216,3 @@ const form = document.getElementById('form')
     }
 
 })
-    
