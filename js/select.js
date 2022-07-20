@@ -5,4 +5,4 @@ link.innerHTML = `<a href="./users/${person.username}.html"><button class="btn b
 
 
 let boasVindas = document.getElementById('boasVindas')
-boasVindas.innerHTML = `<h3 style="text-align: center;" id="nameP">Seja bem-vindo(a) ${person.name}</h3>`
+boasVindas.textContent = `Seja bem-vindo(a) ${person.name}`
